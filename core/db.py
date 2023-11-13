@@ -12,10 +12,10 @@ SQLITE= {
 SQLSERVER={
     'default':{
         'ENGINE': 'mssql',
-        'NAME': 'informaticaSimple',
-        'USER': 'sa',
-        'PASSWORD': 'Brid892240$!',
-        'HOST': 'localhost',
+        'NAME': 'nombre de la base de datos',
+        'USER': 'usuario de la base de datos',
+        'PASSWORD': 'password de la base de datos',
+        'HOST': 'url al servidor de base de datos',
         "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server",
         },
     }
