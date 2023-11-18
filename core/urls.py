@@ -26,6 +26,7 @@ urlpatterns = [
     # Local urls
     path("", include("apps.authentication.urls")),
     path("clientes/", include('apps.cliente.urls')),
+    path("producto/", include('apps.antena.urls')),
     path("inicio", include("apps.home.urls")),
 ]
 

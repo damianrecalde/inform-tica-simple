@@ -30,7 +30,6 @@ class TipoImpuesto(models.Model):
         ('Exento', 'Exento'),
         ('Monotributo', 'Mono tributo'),
         ('Responsable inscripto', 'Responsable inscripto'),
-        ('Protocolar', 'Protocolar')
     )
     tipoImpuesto = models.CharField(max_length=250, verbose_name='Tipo de impuesto', choices=TIPO, null=False, blank=False)
 
