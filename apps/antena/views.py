@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Modo, Producto
 from .forms import NuevoProducto
+from sweetify.views import SweetifySuccessMixin
 
 class ProductoListView(LoginRequiredMixin, ListView):
 	model=Producto
@@ -19,7 +20,7 @@ class ProductoListView(LoginRequiredMixin, ListView):
 		return context
 	
 
-class ProductoCreateView(LoginRequiredMixin, CreateView):
+class ProductoCreateView(LoginRequiredMixin, SweetifySuccessMixin, CreateView):
 	model= Producto
 	form_class=NuevoProducto
 	template_name='producto/create.html'

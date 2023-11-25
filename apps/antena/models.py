@@ -21,6 +21,7 @@ class Producto(Ubicacion):
     marca= models.CharField(max_length=250, verbose_name='Marca', blank=False, null=False)
     modelo= models.CharField(max_length=250, verbose_name='Modelo', blank=False, null=False)
     producto = models.ForeignKey(Modo, on_delete=models.PROTECT, verbose_name='Modo')
+    estado = models.BooleanField(verbose_name='Estado',default=True, null=False, blank=False)
 
     class Meta:
         db_table= 'Producto'

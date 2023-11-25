@@ -13,7 +13,8 @@ class NuevoProducto(forms.ModelForm):
             'calle',
             'calle_nro',
             'latitud',
-            'longitud'
+            'longitud',
+            'estado'
         ]
         labels = {
             'marca': 'Marca del producto',
@@ -24,7 +25,8 @@ class NuevoProducto(forms.ModelForm):
             'calle': 'Calle principal donde se encuentra',
             'calle_nro': 'Altura de la calle en la que se encuentra',
             'latitud': 'Latitud en la que se encuentra',
-            'longitud': 'Longitud en la que se encuentra'
+            'longitud': 'Longitud en la que se encuentra',
+            'estado': 'Estado'
         }
 
         widgets ={
@@ -37,4 +39,5 @@ class NuevoProducto(forms.ModelForm):
             'calle_nro': forms.TextInput( attrs={'class':'form-control'}),
             'latitud': forms.TextInput( attrs={'class':'form-control'}),
             'longitud': forms.TextInput( attrs={'class':'form-control'}),
+            'estado': forms.CheckboxInput( attrs={'class':'custom-control-input', 'id':'customSwitch3'}),
         }

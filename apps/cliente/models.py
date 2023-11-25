@@ -31,3 +31,32 @@ class Cliente(Ubicacion, Contacto, TipoImpuesto):
             self.nombre,
             self.apellido
         )
+        
+        
+class IpAsignada(models.Model):
+    numeroIp= models.CharField(max_length=15, verbose_name="Ip", blank=True, null="True")
+    estado = models.BooleanField(verbose_name='Estado',default=True, null=False, blank=False)
+    
+    class Meta:
+        db_table= 'ipAsignada'
+        verbose_name= 'ipAsignada'
+        verbose_name_plural= 'ipAsignadas'
+        
+        
+
+class IpAsignadaCliente(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT, verbose_name='Cliente')
+    ipAsignada = models.ForeignKey(IpAsignada, on_delete=models.PROTECT, verbose_name='Ip asignada')
+    #MetaDatos
+    class Meta:
+        db_table = 'ip_asignada_cliente'
+        verbose_name = 'Ip asignada a cliente'
+        verbose_name_plural = 'Ip asignada a cliente'
+        # unique_together = [['descripcion']]
+        ordering = ['id']
+    
+    #Métodos
+    def __str__(self):
+        return "{}".format(
+            self.cliente,
+        )
