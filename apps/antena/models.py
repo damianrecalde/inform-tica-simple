@@ -17,6 +17,9 @@ class Modo(models.Model):
         verbose_name_plural = 'tipos de modos'
         ordering = ['id']
 
+    def __str__(self):
+        return self.tipoModo
+
 class Producto(Ubicacion):
     marca= models.CharField(max_length=250, verbose_name='Marca', blank=False, null=False)
     modelo= models.CharField(max_length=250, verbose_name='Modelo', blank=False, null=False)

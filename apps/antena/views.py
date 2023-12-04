@@ -2,9 +2,10 @@ from django.shortcuts import render
 from typing import Any
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import Modo, Producto
+from .models import Producto
 from .forms import NuevoProducto
 from sweetify.views import SweetifySuccessMixin
+from django.urls import reverse_lazy
 
 class ProductoListView(LoginRequiredMixin, ListView):
 	model=Producto
@@ -26,6 +27,7 @@ class ProductoCreateView(LoginRequiredMixin, SweetifySuccessMixin, CreateView):
 	template_name='producto/create.html'
 	success_message='El prodicto %(marca)s fue creado correctamente'
 	login_url='login'
+	success_url = reverse_lazy('antena:producto_list')
 
 	def get_context_data(self, **kwargs):
 		context= super().get_context_data(*kwargs)
