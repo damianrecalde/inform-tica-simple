@@ -11,3 +11,6 @@ class ClienteTipo(General):
         verbose_name = 'tipo cliente'
         verbose_name_plural = 'tipos de clientes'
         ordering = ['id']
+
+    def __str__(self):
+        return self.descripcion
