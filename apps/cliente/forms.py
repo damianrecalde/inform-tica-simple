@@ -1,5 +1,5 @@
 from django import forms
-from .models import Cliente
+from .models import Cliente, IpAsignadaCliente
 
 class NuevoCliente(forms.ModelForm):
     class Meta:
@@ -11,10 +11,14 @@ class NuevoCliente(forms.ModelForm):
             'tipo_cliente',
             'tipo_documento',
             'documento_nro',
+            'localidad',
+            'barrio',
+            'calle',
+            'calle_nro',
             'Fecha_nacimiento',
             'observacion',
-            'producto',
-            'modo',
+            'latitud',
+            'longitud',
             'activo'
         ]
         labels = {
@@ -24,10 +28,14 @@ class NuevoCliente(forms.ModelForm):
             'tipo_cliente': 'Tipo de cliente',
             'tipo_documento': 'Tipo de documento',
             'documento_nro': 'Número de documento',
+            'localidad': 'Localidad',
+            'barrio': 'Barrio',
+            'calle': 'Calle',
+            'calle_nro': 'Calle número',
             'Fecha_nacimiento': 'Fecha de nacimiento',
             'observacion': 'observaciones',
-            'producto': 'Tipo de antena',
-            'modo': 'Modo de la antena',
+            'latitud': 'Latitud',
+            'longitud': 'Longitud',
             'activo': 'Seleccione si esta actvio el cliente'
         }
 
@@ -43,5 +51,26 @@ class NuevoCliente(forms.ModelForm):
             'calle_nro': forms.TextInput( attrs={'class':'form-control'}),
             'latitud': forms.TextInput( attrs={'class':'form-control'}),
             'longitud': forms.TextInput( attrs={'class':'form-control'}),
-            'estado': forms.CheckboxInput( attrs={'class':'custom-control-input', 'id':'customSwitch3'}),
+            'Fecha_nacimiento': forms.TextInput(attrs = {'class':'form-control','type': 'date'}),
+            'activo': forms.CheckboxInput( attrs={'class':'custom-control-input', 'id':'customSwitch3'}),
+        }
+
+class IpAsignadaClienteForm(forms.ModelForm):
+    class Meta:
+        model = IpAsignadaCliente
+        fields=[
+            'cliente',
+            'producto',
+            'ipAsignada',
+        ]
+
+        labels={
+            'cliente':'cliente',
+            'producto': 'Antena',
+            'ipAsignada': 'Ip asignada'
+        }
+
+        widgets ={
+             'producto': forms.Select(attrs={'class':'form-control'}),
+             'ipAsignada': forms.Select(attrs={'class':'form-control'})
         }

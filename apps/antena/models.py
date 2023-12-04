@@ -4,7 +4,7 @@ from apps.localizacion.models import Ubicacion
 
 class Modo(models.Model):
     TIPO = (
-        ('CPE', 'Equipo local cliente'),
+        ('ELC', 'Equipo local cliente'),
         ('AP', 'Acces point'),
         ('RT', 'Router')
     )

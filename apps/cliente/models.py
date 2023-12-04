@@ -46,6 +46,7 @@ class IpAsignada(models.Model):
 
 class IpAsignadaCliente(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT, verbose_name='Cliente')
+    producto = models.ForeignKey(Producto, on_delete=models.PROTECT, verbose_name='Antena')
     ipAsignada = models.ForeignKey(IpAsignada, on_delete=models.PROTECT, verbose_name='Ip asignada')
     #MetaDatos
     class Meta:

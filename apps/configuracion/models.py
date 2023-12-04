@@ -39,3 +39,6 @@ class TipoImpuesto(models.Model):
         verbose_name = 'tipoImpuesto'
         verbose_name_plural = 'Tipo impuestos'
         ordering = ['id']
+
+    def __str__(self):
+        return self.tipoImpuesto

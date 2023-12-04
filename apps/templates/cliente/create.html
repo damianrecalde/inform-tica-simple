@@ -56,43 +56,57 @@
                         {% csrf_token %}
                         <div class="form-group">
                           <div class="row">
-                            <div class="col-md-4">
-                              <label for="descripcion">Marca *</label>
-                              {{ form.marca }}
+                            <div class="col-md-3">
+                              <label for="descripcion">Nombre *</label>
+                              {{ form.nombre }}
                             </div>
-                            <div class="col-md-4">
-                              <label for="descripcion">Modelo *</label>
-                              {{ form.modelo }}
+                            <div class="col-md-3">
+                              <label for="descripcion">Apellido *</label>
+                              {{ form.apellido }}
                             </div>
-                            <div class="col-md-4">
-                              <label for="descripcion">Producto *</label>
-                              {{ form.producto }}
+                            <div class="col-md-3">
+                              <label for="descripcion">Fecha de nacimiento</label>
+                              {{ form.Fecha_nacimiento }}
+                            </div>
+                            <div class="col-md-3">
+                              <label for="descripcion">Documento</label>
+                              {{ form.tipo_documento }}
                             </div>
                           </div> 
                         </div>
                         <div class="form-group">
                           <div class="row">
-                            <div class="col-md-4">
-                              <label for="descripcion">Localidad *</label>
+                            <div class="col-md-6">
+                              <label for="descripcion">Tipo de cliente</label>
+                              {{ form.tipo_cliente }}
+                            </div>
+                            <div class="col-md-6">
+                              <label for="descripcion">Empresa *</label>
+                              {{ form.empresa }}
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <label for="descripcion">Localidad</label>
                               {{ form.localidad }}
                             </div>
                             <div class="col-md-3">
-                              <label for="descripcion">Barrio *</label>
+                              <label for="descripcion">Barrio</label>
                               {{ form.barrio }}
                             </div>
                             <div class="col-md-3">
-                              <label for="descripcion">Calle *</label>
+                              <label for="descripcion">Calle</label>
                               {{ form.calle }}
                             </div>
-                            <div class="col-md-2">
-                              <label for="descripcion">Calle número *</label>
+                            <div class="col-md-3">
+                              <label for="descripcion">Número</label>
                               {{ form.calle_nro }}
                             </div>
                           </div> 
                         </div>
                         <div class="form-group">
                           <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                               <label for="descripcion">Latitud (ingreso con puntos)*</label>
                               {{ form.latitud }}
                             </div>
@@ -104,13 +118,14 @@
                               <label for="descripcion">Estado</label>
                               {{ form.longitud }}
                             </div>
-                            <div class="col-md-2 d-flex justify-content-center align-items-end mb-2">
+                            <div class="col-md-2 pb-3 d-flex justify-content-center align-items-end">
                               <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                {{ form.estado }}
-                               <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                               <label class="custom-control-label" for="customSwitch3">Inactivo/Activo</label>
+                                {{ form.activo }}
+                              <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                              <label class="custom-control-label" for="customSwitch3">Seleccione Inactivo/Activo</label>
                               </div>
                             </div>
+                            
                           </div> 
                         </div>
                         <div class="row mt-5">
