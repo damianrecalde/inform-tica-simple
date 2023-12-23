@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 ROOT_URLCONF = 'core.urls'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = "/"
 TEMPLATE_DIR = os.path.join(CORE_DIR, 'apps/templates')
 
 
@@ -147,5 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USE_DJNAGO_JQUERY = True
 
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
 
 
